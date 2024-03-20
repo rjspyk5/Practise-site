@@ -1,0 +1,14 @@
+import React from "react";
+import { useLoaderData } from "react-router-dom";
+import { Post } from "./Post";
+
+export const Posts = () => {
+  const posts = useLoaderData();
+  return (
+    <div>
+      {posts.map((el) => (
+        <Post post={el} key={el.id} />
+      ))}
+    </div>
+  );
+};
