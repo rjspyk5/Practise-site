@@ -5,7 +5,7 @@ import { Post } from "./Post";
 export const Posts = () => {
   const posts = useLoaderData();
   return (
-    <div>
+    <div className="space-y-4">
       {posts.map((el) => (
         <Post post={el} key={el.id} />
       ))}
