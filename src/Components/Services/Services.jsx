@@ -1,12 +1,28 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
+import { CatagoryCard } from "./CatagoryCard";
+import { useKeenSlider } from "keen-slider/react";
+import "keen-slider/keen-slider.min.css";
+
 export const Services = () => {
   const catagory = useLoaderData();
-  console.log(catagory);
+  const [sliderRef] = useKeenSlider({
+    loop: true,
+    mode: "free",
+    slides: {
+      perView: 8,
+      spacing: 5,
+    },
+  });
+
   return (
     <div>
       <h1 className="text-center font-black text-4xl">Catagories</h1>
-      <div className="flex gap-3"></div>
+      <div ref={sliderRef} className="keen-slider max-w-5xl mx-auto">
+        {catagory.categories.map((el) => (
+          <CatagoryCard data={el} key={el.idCategory} />
+        ))}
+      </div>
       <div className="space-x-3 flex justify-center mt-5">
         <select name="" id="">
           <option value="">Search by Catagory</option>

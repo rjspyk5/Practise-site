@@ -6,7 +6,6 @@ import { UserDetails } from "./Components/Body/UserDetaisl/UserDetails";
 import { Posts } from "./Components/Body/Posts/Posts";
 import { Postdetails } from "./Components/Body/Posts/Postdetails";
 import { Services } from "./Components/Services/Services";
-
 export const router = createBrowserRouter([
   {
     path: "/",
