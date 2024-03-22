@@ -20,12 +20,12 @@ export const Menubar = () => {
             Home
           </NavLink>
           <NavLink
-            to="/user"
+            to="/form"
             className={({ isActive }) =>
               isActive ? "text-green-500 font-black" : " "
             }
           >
-            User
+            Form
           </NavLink>
 
           <NavLink
