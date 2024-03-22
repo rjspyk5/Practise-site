@@ -9,10 +9,10 @@ export const Form = () => {
   };
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="space-y-3" onSubmit={handleSubmit}>
         <input className="bg-gray-200" name="name" type="text" />
         <br />
-        <input type="text" name="age" />
+        <input type="text" className="bg-gray-200" name="age" /> <br />
         <input
           type="submit"
           className="bg-blue-300 rounded-md p-1"
