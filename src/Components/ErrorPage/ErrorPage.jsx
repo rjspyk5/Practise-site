@@ -1,8 +1,14 @@
 import React from "react";
-import { useNavigate, useRouteError } from "react-router";
+import {
+  useLocation,
+  useNavigate,
+  useParams,
+  useRouteError,
+} from "react-router";
 
 export const ErrorPage = () => {
   const error = useRouteError();
+
   const navigate = useNavigate();
   const handleGoBack = () => {
     navigate("/");
