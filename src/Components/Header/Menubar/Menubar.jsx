@@ -6,55 +6,44 @@ export const Menubar = () => {
   const [toggle, settoggle] = useState(false);
   return (
     <>
-      <div>
-        <div className="text-white flex justify-between  py-2 px-4 bg-gray-600 ">
-          <div>
-            <Link to="/">Logo</Link>
-          </div>
-          <div
-            className={`${
-              toggle ? "duration-500 " : "hidden"
-            } flex flex-col  mt-[43px] pb-[30px] md:pb-0 md:block md:m-0 text-center w-96  duration-700 ease-linear`}
-          >
-            <NavLink
-              to="/"
-              className="no-underlie mx-2 block md:inline-block hover:bg-[gray]"
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/services"
-              className="no-underlie  mx-2  block md:inline-block hover:bg-[gray]"
-            >
-              Services
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className="no-underlie mx-2 block md:inline-block hover:bg-[gray]"
-            >
-              Contact
-            </NavLink>
-            <Link to="/posts">Posts</Link>
-            <NavLink
-              to="/about"
-              className="no-underlie mx-2 block md:inline-block hover:bg-[gray]"
-            >
-              About
-            </NavLink>
-          </div>
-
-          <div className="md:hidden">
-            {toggle ? (
-              <button onClick={() => settoggle((prev) => !prev)}>
-                <AiOutlineClose />
-              </button>
-            ) : (
-              <button onClick={() => settoggle((prev) => !prev)}>
-                <AiOutlineMenu />{" "}
-              </button>
-            )}
-          </div>
+      <div className=" flex justify-between w-11/12 mx-auto">
+        <div>
+          <NavLink to="/">Logo</NavLink>
         </div>
+        <ul className="flex">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-green-500 font-black" : " "
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/user"
+            className={({ isActive }) =>
+              isActive ? "text-green-500 font-black" : " "
+            }
+          >
+            User
+          </NavLink>
+
+          <NavLink
+            to="/posts"
+            className={({ isActive }) =>
+              isActive ? "text-green-500 font-black" : " "
+            }
+          >
+            Posts
+          </NavLink>
+
+          <NavLink
+            to="/services"
+            className={(el) => (el.isActive ? "text-green-500 font-black" : "")}
+          >
+            Services
+          </NavLink>
+        </ul>
       </div>
     </>
   );
