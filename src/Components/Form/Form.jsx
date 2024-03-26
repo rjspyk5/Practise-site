@@ -9,7 +9,7 @@ export const Form = () => {
   };
   return (
     <div>
-      <form className="space-y-3" onSubmit={handleSubmit}>
+      <form className="space-y-4" onSubmit={handleSubmit}>
         <input className="bg-gray-200" name="name" type="text" />
         <br />
         <input type="text" className="bg-gray-200" name="age" /> <br />
