@@ -10,14 +10,23 @@ export const Form = () => {
   return (
     <div>
       <form className="space-y-4" onSubmit={handleSubmit}>
-        <input className="bg-gray-200" name="name" type="text" />
-        <br />
-        <input type="text" className="bg-gray-200" name="age" /> <br />
-        <input
-          type="submit"
-          className="bg-blue-300 rounded-md p-1"
-          value="submit"
-        />
+        <label className="input input-bordered flex items-center gap-2">
+          Name
+          <input type="text" className="grow" placeholder="Daisy" />
+        </label>
+        <label className="input input-bordered flex items-center gap-2">
+          Email
+          <input type="text" className="grow" placeholder="daisy@site.com" />
+        </label>
+        <label className="input input-bordered flex items-center gap-2">
+          <input type="text" className="grow" placeholder="Search" />
+          <kbd className="kbd kbd-sm">⌘</kbd>
+          <kbd className="kbd kbd-sm">K</kbd>
+        </label>
+        <label className="input input-bordered flex items-center gap-2">
+          <input type="text" className="grow" placeholder="Search" />
+          <span className="badge badge-info">Optional</span>
+        </label>
       </form>
     </div>
   );
